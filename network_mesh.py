@@ -1,6 +1,6 @@
 from nodes.node import Node
 from nodes.data_node import DataNode
-from nodes.decision_node import DecisionNode
+from nodes.association_node import AssociationNode
 from stack import Stack
 
 
@@ -21,9 +21,9 @@ def get_data_node(data):
     return node
 
 
-def get_decision_node(input_nodes, output_nodes):
+def get_association_node(input_nodes, output_nodes):
     print('new decision node')
-    node = DecisionNode()
+    node = AssociationNode()
     node.add_input_nodes(input_nodes)
     node.add_output_nodes(output_nodes)
     all_nodes.append(node)
@@ -76,7 +76,7 @@ def train_mesh(trainings):
 
             # decision node has not yet been made.
             if (not is_new_data_active) & len(previous_state) > 0:
-                get_decision_node(previous_state, previous_data)
+                get_association_node(previous_state, previous_data)
 
             previous_state = previous_data
 

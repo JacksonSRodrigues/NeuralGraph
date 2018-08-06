@@ -2,7 +2,7 @@ from nodes.node import Node
 from functools import reduce
 
 
-class DecisionNode(Node):
+class AssociationNode(Node):
 
     def __init__(self, id='', threshold=0.5):
         super().__init__(id, threshold)
